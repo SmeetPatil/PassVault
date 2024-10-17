@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-
-<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: BLACK; -fx-border-radius: 6; -fx-border-width: 6; -fx-border-color: #1174ed;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
-    <VBox fx:id="container" spacing="10" style="-fx-padding: 20;" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
-</AnchorPane>
