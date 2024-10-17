@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" prefHeight="36.0" prefWidth="915.0" spacing="50.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="passvault.passvault.controllers.PasswordManagementController">
+    <children>
+        <Label fx:id="domainLabel" alignment="CENTER" prefWidth="250.0" text="Domain" textFill="WHITE">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin></Label>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="251.0" spacing="50.0">
+         <children>
+              <Button fx:id="copyUsernameButton" alignment="CENTER" mnemonicParsing="false" prefWidth="104.0" style="-fx-background-color: #1174ed; -fx-background-radius: 6; -fx-font-weight: bold;" text="Copy username" textAlignment="CENTER" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="250.0">
+         <children>
+            <Button fx:id="copyPasswordButton" mnemonicParsing="false" prefWidth="117.0" style="-fx-background-color: #1174ed; -fx-background-radius: 6; -fx-font-weight: bold;" text="Copy password" />
+         </children>
+      </HBox>
+    </children>
+   <opaqueInsets>
+      <Insets bottom="2.0" />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="5.0" top="5.0" />
+   </padding>
+</HBox>
