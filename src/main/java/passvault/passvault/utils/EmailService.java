@@ -13,12 +13,12 @@ import java.util.Properties;
 
 public class EmailService {
 
-    private static final String CLIENT_ID = "60696327108-bd5sfabfc7cj7ojh295fllt13bu57hgh.apps.googleusercontent.com";
-    private static final String CLIENT_SECRET = "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";
-    private static final String REFRESH_TOKEN = "1//04zMtF6rXtH0KCgYIARAAGAQSNwF-L9IrIWd7zZ6T6hJ0bJRubsv0fZZF8sC2QaQKIy0ZET9aN55_R4f8rOCu2gSt-b4rWO_SuKo";
+    private static final String CLIENT_ID = "CLIENT_ID_HERE";
+    private static final String CLIENT_SECRET = "CLIENT_SECRET_HERE";
+    private static final String REFRESH_TOKEN = "REFRESH_TOKEN_HERE";
 
     public void sendOTP(String toEmail, String otp) {
-        String fromEmail = "pass.vault.mp@gmail.com";
+        String fromEmail = "SENDER_EMAIL_HERE";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
