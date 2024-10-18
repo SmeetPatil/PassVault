@@ -109,6 +109,11 @@ public class PasswordManagementController {
 
             dbManager.savePassword(currentUser, website, username, password);
             showAlert("Success", "Password saved successfully");
+            passwordUsernameField.clear();
+            passwordField.clear();
+            sizeField.clear();
+            websiteField.clear();
+            passwordLabel.setText("Generated Password will appear here");
         } catch (SQLException e) {
             if (e.getMessage().contains("UNIQUE constraint failed")) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -121,6 +126,11 @@ public class PasswordManagementController {
                     try {
                         dbManager.savePassword(currentUser, website, username, password);
                         showAlert("Success", "Password updated successfully");
+                        passwordUsernameField.clear();
+                        passwordField.clear();
+                        sizeField.clear();
+                        websiteField.clear();
+                        passwordLabel.setText("Generated Password will appear here");
                     } catch (SQLException ex) {
                         showAlert("Error", "Error updating password: " + ex.getMessage());
                     }
