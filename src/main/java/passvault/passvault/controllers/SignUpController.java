@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import passvault.passvault.models.UserManager;
 
@@ -65,6 +66,7 @@ public class SignUpController {
             Stage stage = (Stage) signUpButton.getScene().getWindow();
             stage.setScene(new Scene(root, 600, 400));
             stage.setTitle("Login");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,6 @@
 package passvault.passvault.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import passvault.passvault.models.UserManager;
 import passvault.passvault.utils.EmailService;
@@ -25,6 +27,8 @@ public class ResetPasswordController {
     @FXML private Button resetPasswordButton;
     @FXML private Button backToLoginButton;
     @FXML private ImageView statusView;
+    @FXML private HBox NPF;
+    @FXML private HBox NPCF;
 
     private UserManager userManager;
     private EmailService emailService;
@@ -37,25 +41,57 @@ public class ResetPasswordController {
         emailService = new EmailService();
         otpGenerator = new OTPGenerator();
 
+        Platform.runLater(() -> {
+            // Initially hide password fields
+            hidePasswordFields();
+        });
+
         otpField.textProperty().addListener((observable, oldValue, newValue) -> {
             // Allow only digits and limit the length to 6 characters
             if (!newValue.matches("\\d*") || newValue.length() > 6) {
                 otpField.setText(oldValue);
             }
-            if(newValue.matches("\\d*") || newValue.length() == 6) {
+            if (newValue.length() == 6) {
                 if (!newValue.equals(generatedOTP)) {
                     Image wrong = new Image(getClass().getResourceAsStream("/cross.png"));
                     statusView.setImage(wrong);
-                } else if (newValue.equals(generatedOTP)) {
+                    // Hide password fields when OTP is incorrect
+                    hidePasswordFields();
+                } else {
                     Image right = new Image(getClass().getResourceAsStream("/correct.png"));
                     statusView.setImage(right);
+                    // Show password fields when OTP is correct
+                    showPasswordFields();
                 }
+            } else {
+                // Clear status image and hide fields if OTP length is not 6
+                statusView.setImage(null);
+                hidePasswordFields();
             }
         });
+
 
         sendOTPButton.setOnAction(event -> handleSendOTP());
         resetPasswordButton.setOnAction(event -> handleResetPassword());
         backToLoginButton.setOnAction(event -> navigateToLogin());
+    }
+
+    private void showPasswordFields() {
+        NPF.setVisible(true);
+        NPF.setManaged(true);
+        NPCF.setVisible(true);
+        NPCF.setManaged(true);
+        resetPasswordButton.setVisible(true);
+        resetPasswordButton.setManaged(true);
+    }
+
+    private void hidePasswordFields() {
+        NPF.setVisible(false);
+        NPF.setManaged(false);
+        NPCF.setVisible(false);
+        NPCF.setManaged(false);
+        resetPasswordButton.setVisible(false);
+        resetPasswordButton.setManaged(false);
     }
 
     private void handleSendOTP() {
@@ -66,6 +102,7 @@ public class ResetPasswordController {
             generatedOTP = otpGenerator.generateOTP();
             emailService.sendOTP(email, generatedOTP);
             showAlert("OTP Sent", "OTP sent successfully");
+            hidePasswordFields();
         } else {
             showAlert("Error", "Username/Associated Email not found in our records.");
         }
@@ -81,6 +118,7 @@ public class ResetPasswordController {
 
         if (!enteredOTP.equals(generatedOTP)) {
             showAlert("Error", "Invalid OTP.");
+            hidePasswordFields();
             return;
         }
         if (!newPassword.equals(confirmNewPassword)) {
@@ -110,6 +148,7 @@ public class ResetPasswordController {
             Stage stage = (Stage) backToLoginButton.getScene().getWindow();
             stage.setScene(new Scene(root, 600, 400));
             stage.setTitle("Login");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

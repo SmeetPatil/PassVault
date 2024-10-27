@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import passvault.passvault.models.UserManager;
 import passvault.passvault.utils.DatabaseManager_App;
@@ -59,6 +60,7 @@ public class LoginController {
             Stage stage = (Stage) loginButton.getScene().getWindow();
             stage.setScene(new Scene(root, 623, 483));
             stage.setTitle("Sign Up");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,6 +76,7 @@ public class LoginController {
             Stage stage = (Stage) loginButton.getScene().getWindow();
             stage.setScene(new Scene(root, 640, 480));
             stage.setTitle("Password Management");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -89,6 +92,7 @@ public class LoginController {
             Stage stage = (Stage) forgotButton.getScene().getWindow();
             stage.setScene(new Scene(root, 600, 600));
             stage.setTitle("Reset Password");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

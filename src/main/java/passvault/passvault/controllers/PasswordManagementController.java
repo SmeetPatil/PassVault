@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
@@ -114,6 +115,7 @@ public class PasswordManagementController {
             sizeField.clear();
             websiteField.clear();
             passwordLabel.setText("Generated Password will appear here");
+
         } catch (SQLException e) {
             if (e.getMessage().contains("UNIQUE constraint failed")) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -207,6 +209,7 @@ public class PasswordManagementController {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Saved Passwords for: " + currentUser);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             stage.show();
 
         } catch (SQLException | IOException e) {
@@ -276,7 +279,7 @@ public class PasswordManagementController {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Login");
-
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/passvault.png")));
             // Clear the current user data
             currentUser = null;
             // You might want to clear other user-specific data here
