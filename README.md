@@ -11,6 +11,6 @@ This is a full fledged password manager that generates secure passwords and stor
    #### 3.4 Fill in the respective fields in src/main/java/passvault/passvault/utils/EmailService.java, and your email associated with the project in Google Cloud Console. The email must be registered as a tester(sender email).
 4. Run MainApp, if any JavaFX runtime components are missing, download them from <a href="https://openjfx.io/">here</a> and include them in the classpath.  
 
-# Contributors
+## Contributors
 ### Smeet Patil
 ### Soham Pawar
