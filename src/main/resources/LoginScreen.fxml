@@ -28,11 +28,13 @@
          <children>
             <HBox alignment="CENTER" prefHeight="29.0" prefWidth="548.0">
                <children>
+                  <Label prefHeight="17.0" prefWidth="60.0" style="-fx-font-weight: bold;" text="Username" textFill="WHITE" />
                   <TextField fx:id="usernameField" prefHeight="33.0" prefWidth="280.0" promptText="Username" style="-fx-border-color: #1174ed; -fx-border-width: 4; -fx-border-radius: 6; -fx-background-radius: 6;" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="35.0" prefWidth="548.0">
                <children>
+                  <Label prefHeight="17.0" prefWidth="60.0" style="-fx-font-weight: bold;" text="Password" textFill="WHITE" />
                   <PasswordField fx:id="passwordField" prefHeight="33.0" prefWidth="280.0" promptText="Password" style="-fx-border-color: #1174ed; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-width: 4;" />
                </children>
             </HBox>

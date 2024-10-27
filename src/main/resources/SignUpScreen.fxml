@@ -28,21 +28,25 @@
          <children>
             <HBox alignment="CENTER" prefHeight="29.0" prefWidth="548.0">
                <children>
+                  <Label prefHeight="17.0" prefWidth="60.0" style="-fx-font-weight: bold;" text="Username" textFill="WHITE" />
                   <TextField fx:id="signupUsernameField" prefHeight="113.0" prefWidth="280.0" promptText="Username" style="-fx-border-color: #1174ed; -fx-border-width: 4; -fx-border-radius: 6; -fx-background-radius: 6;" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="29.0" prefWidth="548.0">
                <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="60.0" style="-fx-font-weight: bold;" text="Email" textFill="WHITE" />
                   <TextField fx:id="emailField" prefHeight="113.0" prefWidth="280.0" promptText="Email " style="-fx-border-color: #1174ed; -fx-border-width: 4; -fx-border-radius: 6; -fx-background-radius: 6;" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="35.0" prefWidth="548.0">
                <children>
+                  <Label prefHeight="17.0" prefWidth="60.0" style="-fx-font-weight: bold;" text="Password" textFill="WHITE" />
                   <PasswordField fx:id="signupPasswordField" prefHeight="25.0" prefWidth="280.0" promptText="Password" style="-fx-border-color: #1174ed; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-width: 4;" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="35.0" prefWidth="548.0">
                <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="113.0" style="-fx-font-weight: bold;" text="Confirm Password" textFill="WHITE" />
                   <PasswordField fx:id="confirmPasswordField" prefHeight="25.0" prefWidth="280.0" promptText="Confirm Password" style="-fx-border-color: #1174ed; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-width: 4;" />
                </children>
             </HBox>
