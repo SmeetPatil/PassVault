@@ -7,7 +7,7 @@ module passvault.passvault {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires java.mail;
+    requires jakarta.mail;
     requires com.google.api.client.json.jackson2;
     requires com.google.api.client;
     requires google.api.client;
