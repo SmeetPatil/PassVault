@@ -14,3 +14,4 @@ This is a full fledged password manager that generates secure passwords and stor
 ## Contributors
 ### Smeet Patil
 ### Soham Pawar
+### Soham Patil
